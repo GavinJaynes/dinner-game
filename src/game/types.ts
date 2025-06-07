@@ -12,6 +12,8 @@ export interface GameState {
     dinnerOptions: DinnerOption[]
     player1: Player
     player2: Player
+    currentPlayer: PlayerNumber
+    bothPlayersReady: boolean
 }
 
 export type PlayerNumber = 1 | 2

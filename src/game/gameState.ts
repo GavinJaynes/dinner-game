@@ -16,6 +16,8 @@ export const gameState: GameState = {
     round: 1,
     attempts: 0,
     dinnerOptions,
+    currentPlayer: 1,
+    bothPlayersReady: false,
     player1: {
         selectedCard: null,
         lastCard: null,
@@ -31,6 +33,8 @@ export const gameState: GameState = {
 export function resetGameState(): void {
     gameState.round = 1
     gameState.attempts = 0
+    gameState.currentPlayer = 1
+    gameState.bothPlayersReady = false
     gameState.player1 = {
         selectedCard: null,
         lastCard: null,

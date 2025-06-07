@@ -32,29 +32,85 @@ h1 {
   font-style: italic;
 }
 
-.players-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  margin-bottom: 30px;
-}
-
-.player {
+.turn-section {
   background: #f8f9fa;
   border-radius: 15px;
-  padding: 20px;
+  padding: 30px;
   border: 3px solid #e9ecef;
+  margin-bottom: 30px;
+  transition: border-color 0.3s ease;
 }
 
-.player.active {
+.turn-section.active {
   border-color: #28a745;
   background: #f8fff9;
 }
 
-.player h3 {
+.current-player {
   text-align: center;
-  margin-top: 0;
+  margin-bottom: 25px;
+}
+
+.current-player h2 {
   color: #333;
+  margin: 0 0 10px 0;
+  font-size: 1.8em;
+}
+
+.current-player p {
+  color: #666;
+  margin: 0;
+  font-style: italic;
+}
+
+.player-cards {
+  margin-bottom: 25px;
+}
+
+.turn-actions {
+  text-align: center;
+}
+
+.confirm-btn {
+  background: linear-gradient(145deg, #007bff, #0056b3);
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 1.1em;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.confirm-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,123,255,0.3);
+}
+
+.confirm-btn:disabled {
+  background: #6c757d;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.waiting-section {
+  background: #fff3cd;
+  border: 2px solid #ffc107;
+  border-radius: 15px;
+  padding: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.waiting-section h3 {
+  color: #856404;
+  margin-top: 0;
+}
+
+.waiting-section p {
+  color: #856404;
+  margin-bottom: 0;
 }
 
 .card-grid {
@@ -292,13 +348,14 @@ h1 {
 }
 
 .reset-btn {
-  background: linear-gradient(145deg, #dc3545, #c82333);
-  color: white;
+  
+  color: gray;
   border: none;
   padding: 10px 20px;
   border-radius: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
+  
 }
 
 .reset-btn:hover {
@@ -307,11 +364,15 @@ h1 {
 }
 
 @media (max-width: 768px) {
-  .players-section {
-      grid-template-columns: 1fr;
+  .turn-section {
+      padding: 20px;
   }
   
   .card-grid {
       grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+  
+  .current-player h2 {
+      font-size: 1.5em;
   }
 }
